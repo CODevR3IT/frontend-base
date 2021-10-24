@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { AlertModule } from 'ngx-bootstrap/alert';
 import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LoginComponent } from './pages/login/login.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

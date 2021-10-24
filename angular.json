@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "js-sha1"
+            ],
             "outputPath": "dist/base-bs",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -32,7 +35,9 @@
               "./scss/cdmx.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/js-sha1/build/sha1.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -11,26 +11,40 @@
         </div>
         <div class="flex-fill w-50 p-4">
             <div class="container" style="min-height: 90%;">
-                <h1 class="mt-5 text-center">{{appName}}</h1>
-                <form #formLogin="ngForm">
+                <h2 class="mt-5 text-center">{{appName}}</h2>
+                <p class="text-center">{{descripcion}}</p>
+                <form #formLogin="ngForm" (ngSubmit)="submit()" autocomplete="off">
                     <div class="mb-4">
-                        <label class="form-label">Login</label>
-                        <input type="text" class="form-control" placeholder="USR">
+                        <label class="form-label">Usuario</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Usuario" [(ngModel)]="logIn.login"
+                                name="login" #login="ngModel"
+                                [class.is-invalid]="login.invalid && (login.dirty || login.touched)" required>
+                                <div class="invalid-feedback">El campo usuario es requerido</div>
+                        </div>
                     </div>
                     <div class="mb-5">
                         <label class="form-label">Clave</label>
-                        <input type="password" class="form-control" placeholder="********">
+                        <div class="input-group">
+                            <input type="password" class="form-control is-invalid" placeholder="********"
+                                [(ngModel)]="logIn.password" name="password" #password="ngModel"
+                                [class.is-invalid]="password.invalid && (password.dirty || password.touched)" required>
+                            <div class="invalid-feedback">El campo password es requerido</div>
+                        </div>
                     </div>
-                    
                     <div class="d-grid">
-                        <button class="btn btn-cdmx-secondary" type="button" (click)="show()">Iniciar Sesión</button>
+                        <button class="btn btn-cdmx-secondary" type="submit" [disabled]="formLogin.invalid">Iniciar
+                            Sesión</button>
                     </div>
-                    <div class="d-flex justify-content-end align-items-end" style="min-height: 200px">
+                    <div class="mt-5">
+                        <alert type="warning" [dismissible]="true" *ngIf="errorMsj" class="text-center">{{errorMsj}}
+                        </alert>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-end" style="min-height: 150px">
                         <p style="font-size: x-small;">Version : {{version}}</p>
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </div>
