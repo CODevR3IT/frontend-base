@@ -36,7 +36,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/js-sha1/build/sha1.min.js"
+              "./node_modules/js-sha1/build/sha1.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
