@@ -5,6 +5,7 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { FooterModule } from 'src/app/components/footer/footer.module';
+import { NavmenuModule } from 'src/app/components/navmenu/navmenu.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FooterModule } from 'src/app/components/footer/footer.module';
     CommonModule,
     MainRoutingModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    NavmenuModule
   ]
 })
 export class MainModule { }

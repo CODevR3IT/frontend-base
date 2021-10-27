@@ -5,12 +5,13 @@ $cdmx-accent: #bc955c;
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+$nav-pills-link-active-bg: $cdmx-primary;
 
 $custom-theme-colors: (
   "white": #FFF,
   "cdmx-primary": $cdmx-primary,
   "cdmx-secondary": $cdmx-secondary,
-  "cdmx-accennt": $cdmx-accent
+  "cdmx-accent": $cdmx-accent,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);

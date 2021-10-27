@@ -3,3 +3,6 @@
 html {height: 100%;}
 body {background-color: #E8E8E8;min-height: 100%;}
 .size-root {min-height: 100%;}
+.material-icons{display: inline-flex; vertical-align: top;}
+/*a.active{background-color: #9f2241 !important;}
+a.nav-link{color:#9f2241;}*/

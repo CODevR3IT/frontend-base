@@ -15,6 +15,11 @@ const routes: Routes = [
     
   },
   {
+    path: 'ejemplo',
+    canActivate: [GuardService],
+    loadChildren: () => import('./pages/ejemplo/ejemplo.module').then(m => m.EjemploModule),
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

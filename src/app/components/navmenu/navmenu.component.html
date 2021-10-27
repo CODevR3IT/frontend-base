@@ -1,0 +1,111 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="min-height: 100%; height: 600px;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+    <img class="bi me-2" src="assets/img/cdmx.png" height="32" />
+    <span class="fs-4">Menu</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a [routerLink]="['/main']" class="nav-link link-cdmx-primary" [class.active]="menu==1" (click)="menu= 1">
+        <span class="material-icons me-2">face</span>
+        Home
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="" class="nav-link link-cdmx-primary" [class.active]="menu==2" (click)="menu= 2">
+        <span class="material-icons me-2">face</span>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="" class="nav-link link-cdmx-primary" [class.active]="menu==3" (click)="menu= 3">
+        <span class="material-icons me-2">face</span>
+        Orders
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="" class="nav-link link-cdmx-primary" [class.active]="menu==4" (click)="menu= 4">
+        <span class="material-icons me-2">face</span>
+        Products
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="" class="nav-link link-cdmx-primary" [class.active]="menu==5" (click)="menu= 5">
+        <span class="material-icons me-2">face</span>
+        Customers
+      </a>
+    </li>
+  </ul>
+  <hr>
+  <div class="dropdown">
+    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
+      data-bs-toggle="dropdown" aria-expanded="false">
+      <div *ngIf="session.perfil_img">
+        <ngx-avatar [src]="session.perfil_img"></ngx-avatar>
+      </div>
+      <div *ngIf="!session.perfil_img">
+        <ngx-avatar [name]="session?.nombre"></ngx-avatar>
+      </div>
+      <strong class="mx-2">{{session?.nombre}}</strong>
+    </a>
+    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+      <li><span class="dropdown-item">{{session?.rfc}}</span></li>
+      <li><span class="dropdown-item">{{session?.nombre}} {{session?.primer_apellido}}</span></li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+</div>
+<!--<div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 4.5rem;">
+    <a href="/" class="d-block p-3 link-dark text-decoration-none" tooltip="Icon-only" placement="right">
+        <img class="bi me-2" src="assets/img/cdmx.png" height="32" />
+      <span class="visually-hidden">Icon-only</span>
+    </a>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+      <li class="nav-item">
+        <a [routerLink]="['/main']" class="nav-link active py-3 border-bottom" aria-current="page" tooltip="Home" placement="right">
+        
+          <i class="bi-house" style="font-size: 1.5rem;"></i>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/ejemplo']" class="nav-link py-3 border-bottom" tooltip="Dashboard" placement="right">
+            <i class="bi-house" style="font-size: 1.5rem;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link py-3 border-bottom" tooltip="Orders" placement="right">
+            <i class="bi-house" style="font-size: 1.5rem;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link py-3 border-bottom" tooltip="Products" placement="right">
+          <i class="bi-house" style="font-size: 1.5rem;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link py-3 border-bottom" tooltip="Customers" placement="right">
+            <i class="bi-house" style="font-size: 1.5rem;"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="dropdown border-top">
+      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+        <div *ngIf="session.perfil_img">
+          <ngx-avatar [src]="session.perfil_img"></ngx-avatar>
+        </div>
+        <div *ngIf="!session.perfil_img">
+          <ngx-avatar [name]="session?.nombre"></ngx-avatar>
+        </div>
+      </a>
+      <ul class="dropdown-menu text-small shadow">
+        <li><span class="dropdown-item">{{session?.rfc}}</span></li>
+        <li><span class="dropdown-item">{{session?.nombre}} {{session?.primer_apellido}}</span></li>
+       
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+  </div>-->

@@ -1,0 +1,49 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="min-height: 100%; height: 600px; width: 260px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img class="bi me-2" src="assets/img/cdmx.png" height="32" />
+      <span class="fs-4">Menu</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a [routerLink]="['introduccion']" class="nav-link link-cdmx-primary" [class.active]="menu==1" (click)="menu= 1">
+          <span class="material-icons me-2">face</span>
+          Introducción
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['formulario']" class="nav-link link-cdmx-primary" [class.active]="menu==2" (click)="menu= 2">
+          <span class="material-icons me-2">face</span>
+          Formulario
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['paginado']" class="nav-link link-cdmx-primary" [class.active]="menu==3" (click)="menu= 3">
+          <span class="material-icons me-2">face</span>
+          Paginado
+        </a>
+      </li>
+      
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <div *ngIf="session.perfil_img">
+          <ngx-avatar [src]="session.perfil_img"></ngx-avatar>
+        </div>
+        <div *ngIf="!session.perfil_img">
+          <ngx-avatar [name]="session?.nombre"></ngx-avatar>
+        </div>
+        <strong class="mx-2">{{session?.nombre}}</strong>
+      </a>
+      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+        <li><span class="dropdown-item">{{session?.rfc}}</span></li>
+        <li><span class="dropdown-item">{{session?.nombre}} {{session?.primer_apellido}}</span></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
