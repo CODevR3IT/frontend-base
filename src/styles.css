@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+
 html {height: 100%;}
 body {background-color: #E8E8E8;min-height: 100%;}
 .size-root {min-height: 100%;}
 .material-icons{display: inline-flex; vertical-align: top;}
-/*a.active{background-color: #9f2241 !important;}
-a.nav-link{color:#9f2241;}*/

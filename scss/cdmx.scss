@@ -20,5 +20,33 @@ $utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
 $utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
 $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
 
+.callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e9ecef;
+  border-left-color: rgb(233, 236, 239);
+  border-left-width: 1px;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+}
+.callout-cdmx-primary{border-left-color: $cdmx-primary;}
+.callout-cdmx-secondary{border-left-color: $cdmx-secondary;}
+.callout-cdmx-accent{border-left-color: $cdmx-accent;}
+.callout-primary{border-left-color: $primary;}
+.callout-secondary{border-left-color: $secondary;}
+.callout-success{border-left-color: $success;}
+.callout-info{border-left-color: $info;}
+.callout-warning{border-left-color: $warning;}
+.callout-danger{border-left-color: $danger;}
+.callout-light{border-left-color: $light;}
+.callout-dark{border-left-color: $dark;}
+/*ngx calendar bootstrap custom*/
+.bs-datepicker-head{background-color: $cdmx-primary !important}
+td.week span{color:$cdmx-primary !important}
+.bs-datepicker-body table td span.selected {background-color: $cdmx-primary !important}
+.bs-datepicker-container{padding: 0 !important}
+/*ngx calendar bootstrap custom*/
+.swal2-styled.swal2-confirm{background-color: $cdmx-primary !important }
 @import "../node_modules/bootstrap/scss/bootstrap";
  

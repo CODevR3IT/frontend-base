@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import Swal from 'sweetalert2';
+
 import { NgxSpinnerService } from "ngx-spinner";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth.service';
@@ -36,13 +36,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  show(): void{
-    this.spinner.show();
-    setTimeout(()=>{
-      this.spinner.hide();
-    },5000)
-  }
-
   submit(): void{
     this.spinner.show();
     this.errorMsj = '';
@@ -51,7 +44,7 @@ export class LoginComponent implements OnInit {
     .subscribe((res:any) => {
       this.spinner.hide();
       this.auth.setSession(res);
-      this.route.navigate(['/main']);
+      this.route.navigate(['/ejemplo']);
     }, (err: any) =>{
       this.spinner.hide();
       this.errorMsj = err.error.mensaje;

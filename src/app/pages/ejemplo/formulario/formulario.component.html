@@ -1,1 +1,76 @@
-<p>formulario works!</p>
+<div class="bg-white p-4">
+    <h3>Formulario</h3>
+    <hr>
+    <form #formEjemplo="ngForm" (ngSubmit)="submit()">
+        <div class="row">
+            <div class="col mb-3">
+                <label class="form-label">Email</label>
+                <div class="input-group">
+                    <input type="email" class="form-control"
+                        [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
+                        [class.is-valid]="email.valid && (email.dirty || email.touched)" [(ngModel)]="payload.email"
+                        name="email" #email="ngModel" required [email]="true" placeholder="name@example.com">
+                    <div class="invalid-feedback">
+                        {{email.errors?.required && 'El correo es requerido' }}
+                        {{email.errors?.email && 'Se debe ingresar un email válido'}}
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" #password="ngModel" [(ngModel)]="payload.password"
+                    name="password" [class.is-invalid]="password.invalid && (password.dirty || password.touched)"
+                    [class.is-valid]="password.valid && (password.dirty || password.touched)" placeholder="**********"
+                    required>
+                <div class="valid-feedback">Buen password bro!</div>
+                <div class="invalid-feedback">El password es requerido</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Textarea</label>
+            <textarea class="form-control" rows="3" [(ngModel)]="payload.textarea" name="textarea"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Archivo</label>
+            <input class="form-control" type="file"
+                [class.is-invalid]="archivo.invalid && (archivo.dirty || archivo.touched)" [(ngModel)]="payload.archivo"
+                name="archivo" #archivo="ngModel">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Alcaldías</label>
+            <select class="form-select" [(ngModel)]="payload.id_alcaldia" name="alcaldia">
+                <option *ngFor="let alcaldia of alcaldias" [value]="alcaldia.id">{{alcaldia.nombre}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Buscar Alcaldia</label>
+            <input [(ngModel)]="payload.buscar_alcaldia" name="buscarAlcaldia" [typeaheadLatinize]="true" [typeahead]="alcaldiasTypeAhead" [isAnimated]="true" class="form-control">
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label class="form-label">Date Picker</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                    <input type="text" placeholder="Datepicker" class="form-control" [(ngModel)]="payload.fecha"
+                        name="fecha" required #fecha="ngModel"
+                        [class.is-invalid]="fecha.invalid && (fecha.dirty || fecha.touched)"
+                        [bsConfig]="{ isAnimated: true }" bsDatepicker>
+                    <div class="invalid-feedback">La fecha es requerida</div>
+                </div>
+            </div>
+            <div class="col form-group mb-3">
+                <label class="form-label">Date Picker Rango</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-calendar-range"></i></span>
+                    <input type="text" placeholder="Daterangepicker" class="form-control"
+                        [(ngModel)]="payload.fecharango" name="fecharango" [bsConfig]="{ isAnimated: true }"
+                        bsDaterangepicker>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-2">
+            <button class="btn btn-cdmx-primary gap-3" [disabled]="formEjemplo.invalid">Enviar</button>
+        </div>
+    </form>
+    <hr />
+</div>

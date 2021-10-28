@@ -10,7 +10,15 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { IntroduccionComponent } from './introduccion/introduccion.component';
 import { NavComponent } from './nav/nav.component';
 import { AvatarModule } from 'ngx-avatar';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { esLocale } from 'ngx-bootstrap/locale';
+import { NgxSpinnerModule } from "ngx-spinner";
+defineLocale('es', esLocale);
 
 @NgModule({
   declarations: [
@@ -25,7 +33,14 @@ import { AvatarModule } from 'ngx-avatar';
     EjemploRoutingModule,
     HeaderModule,
     FooterModule,
-    AvatarModule
+    AvatarModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    TimepickerModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    TypeaheadModule.forRoot(),
   ]
 })
 export class EjemploModule { }
