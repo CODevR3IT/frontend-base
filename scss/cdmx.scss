@@ -20,6 +20,13 @@ $utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
 $utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
 $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
 
+.nav-link:hover{
+  background-color: $cdmx-primary !important;
+  border-radius: 0.25rem;
+  color: #FFF !important;
+}
+
+
 .callout {
   padding: 1.25rem;
   margin-top: 1.25rem;
@@ -41,6 +48,26 @@ $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
 .callout-danger{border-left-color: $danger;}
 .callout-light{border-left-color: $light;}
 .callout-dark{border-left-color: $dark;}
+.content-box {
+  padding: 1.5rem;
+  margin: 1.25rem;
+  border: 1px solid #e9ecef;
+  border-top-color: rgb(233, 236, 239);
+  border-top-width: 1px;
+  border-top-width: .25rem;
+  border-radius: .25rem;
+}
+.content-box-cdmx-primary{border-top-color: $cdmx-primary;}
+.content-box-cdmx-secondary{border-top-color: $cdmx-secondary;}
+.content-box-cdmx-accent{border-top-color: $cdmx-accent;}
+.content-box-primary{border-top-color: $primary;}
+.content-box-secondary{border-top-color: $secondary;}
+.content-box-success{border-top-color: $success;}
+.content-box-info{border-top-color: $info;}
+.content-box-warning{border-top-color: $warning;}
+.content-box-danger{border-top-color: $danger;}
+.content-box-light{border-top-color: $light;}
+.content-box-dark{border-top-color: $dark;}
 /*ngx calendar bootstrap custom*/
 .bs-datepicker-head{background-color: $cdmx-primary !important}
 td.week span{color:$cdmx-primary !important}

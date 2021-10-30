@@ -1,12 +1,13 @@
 <ngx-spinner> <p class="text-white">Espere un momento...</p></ngx-spinner>
-<div class="min-vh-100 d-flex flex-column">
-    <app-header></app-header>
-    <main class="d-flex" style="flex: 1 0 auto;">
-        
-        <app-nav></app-nav>
-        <div class="flex-column flex-grow-1 p-5">
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white">
+            <app-nav></app-nav>
+        </div>
+        <div class="col">
             <router-outlet></router-outlet>
         </div>
-    </main>
-    <app-footer></app-footer>
+    </div>
 </div>
+<app-footer></app-footer>

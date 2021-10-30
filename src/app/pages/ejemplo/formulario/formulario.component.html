@@ -1,9 +1,9 @@
-<div class="bg-white p-4">
+<div class="content-box bg-white content-box-cdmx-primary">
     <h3>Formulario</h3>
     <hr>
     <form #formEjemplo="ngForm" (ngSubmit)="submit()">
         <div class="row">
-            <div class="col mb-3">
+            <div class="col-md-6 col-sm-12 mb-3">
                 <label class="form-label">Email</label>
                 <div class="input-group">
                     <input type="email" class="form-control"
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col mb-3">
+            <div class="col-md-6 col-sm-12 mb-3">
                 <label class="form-label">Password</label>
                 <input type="password" class="form-control" #password="ngModel" [(ngModel)]="payload.password"
                     name="password" [class.is-invalid]="password.invalid && (password.dirty || password.touched)"
@@ -47,24 +47,24 @@
             <input [(ngModel)]="payload.buscar_alcaldia" name="buscarAlcaldia" [typeaheadLatinize]="true" [typeahead]="alcaldiasTypeAhead" [isAnimated]="true" class="form-control">
         </div>
         <div class="row">
-            <div class="col mb-3">
+            <div class="col-sm-12 col-md-6 mb-3">
                 <label class="form-label">Date Picker</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-calendar"></i></span>
                     <input type="text" placeholder="Datepicker" class="form-control" [(ngModel)]="payload.fecha"
                         name="fecha" required #fecha="ngModel"
                         [class.is-invalid]="fecha.invalid && (fecha.dirty || fecha.touched)"
-                        [bsConfig]="{ isAnimated: true }" bsDatepicker>
+                        [bsConfig]="{ isAnimated: true }" bsDatepicker placement="top">
                     <div class="invalid-feedback">La fecha es requerida</div>
                 </div>
             </div>
-            <div class="col form-group mb-3">
+            <div class="col-sm-12 col-md-6 form-group mb-3">
                 <label class="form-label">Date Picker Rango</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-calendar-range"></i></span>
                     <input type="text" placeholder="Daterangepicker" class="form-control"
                         [(ngModel)]="payload.fecharango" name="fecharango" [bsConfig]="{ isAnimated: true }"
-                        bsDaterangepicker>
+                        bsDaterangepicker placement="top">
                 </div>
             </div>
         </div>

@@ -5,6 +5,11 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent
+  },
+  {
+    path: '**',
+    loadChildren: () => import('../../pages/error/not-found/not-found.module').then(m => m.NotFoundModule),
+    pathMatch: 'full'
   }
 ];
 

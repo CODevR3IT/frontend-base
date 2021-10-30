@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { esLocale } from 'ngx-bootstrap/locale';
@@ -41,6 +42,7 @@ defineLocale('es', esLocale);
     TimepickerModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TypeaheadModule.forRoot(),
+    TooltipModule.forRoot(),
   ]
 })
 export class EjemploModule { }
