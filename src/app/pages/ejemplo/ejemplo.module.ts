@@ -19,6 +19,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { esLocale } from 'ngx-bootstrap/locale';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 defineLocale('es', esLocale);
 
 @NgModule({
@@ -43,6 +44,7 @@ defineLocale('es', esLocale);
     BsDatepickerModule.forRoot(),
     TypeaheadModule.forRoot(),
     TooltipModule.forRoot(),
+    PaginationModule.forRoot()
   ]
 })
 export class EjemploModule { }
