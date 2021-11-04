@@ -20,6 +20,7 @@ import { defineLocale } from 'ngx-bootstrap/chronos';
 import { esLocale } from 'ngx-bootstrap/locale';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { SubmenuComponent } from './submenu/submenu.component';
 defineLocale('es', esLocale);
 
 @NgModule({
@@ -29,6 +30,7 @@ defineLocale('es', esLocale);
     FormularioComponent,
     IntroduccionComponent,
     NavComponent,
+    SubmenuComponent,
   ],
   imports: [
     CommonModule,

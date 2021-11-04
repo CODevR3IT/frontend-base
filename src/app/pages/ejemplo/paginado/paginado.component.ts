@@ -31,7 +31,6 @@ export class PaginadoComponent implements OnInit {
         this.spinner.hide();
         this.data = [];
         this.errMsj = err.error.mensaje;
-
       }
     );
   }

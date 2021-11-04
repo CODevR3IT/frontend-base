@@ -16,8 +16,8 @@
         <a href="#submenu{{i}}"  class="nav-link submenu link-cdmx-primary align-middle" data-bs-toggle="collapse" [tooltip]="item.name" placement="right">
           <span class="material-icons me-2">{{item.icon}}</span> <span class="ms-1 d-none d-sm-inline">{{item.name}}</span> </a>
         <ul class="collapse nav flex-column" style="padding-left: 1em;" id="submenu{{i}}" data-bs-parent="#menu">
-          <li class="w-100" *ngFor="let submenu of item.children">
-            <a [routerLink]="submenu.route" class="nav-link link-cdmx-primary" [tooltip]="submenu.name" placement="right"> <span class="d-none d-sm-inline ml-5">Item</span> 1 </a>
+          <li class="w-100" *ngFor="let submenu of item.children" >
+            <a [routerLink]="submenu?.route" class="nav-link link-cdmx-primary" [class.active]="submenu.active" [tooltip]="submenu?.name" (click)="changeActive()" placement="right">  <span class="material-icons me-2">{{submenu?.icon}}</span> <span class="d-none d-sm-inline ml-5">{{submenu?.name}}</span>  </a>
           </li>
        
         </ul>

@@ -1,29 +1,32 @@
 <div class="content-box bg-white content-box-cdmx-primary">
-    <div class="table-responsive-md" *ngIf="data.length > 0"> 
-    <table class="table table-hover table-striped">
-        <thead class="table-cdmx-primary">
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido Paterno</th>
-                <th>Apellido Materno</th>
-                <th>RFC</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of data">
-                <td>{{item.nombre}}</td>
-                <td>{{item.apellidopaterno}}</td>
-                <td>{{item.apellidomaterno}}</td>
-                <td>{{item.rfc}}</td>
-            </tr>
+    <ng-container *ngIf="data.length > 0">
+    <div class="table-responsive-md" >
+        <table class="table table-hover table-striped">
+            <thead class="table-cdmx-primary" style="white-space: nowrap;">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>RFC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellidopaterno}}</td>
+                    <td>{{item.apellidomaterno}}</td>
+                    <td>{{item.rfc}}</td>
+                </tr>
 
-        </tbody>
-    </table>
-</div>
-    <pagination [totalItems]="total" 
-    [rotate]="false" [maxSize]="5"
-    [itemsPerPage]="perPage"
-    [boundaryLinks]="true"
-    previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" 
-    (pageChanged)="getData($event)"></pagination>
+            </tbody>
+        </table>
+    </div>
+    
+    <pagination [totalItems]="total" [rotate]="false" [maxSize]="4" [itemsPerPage]="perPage" [boundaryLinks]="true"
+        previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"
+        (pageChanged)="getData($event)"></pagination>
+    </ng-container>
+        <div class="callout callout-warning" *ngIf="data.length == 0">
+            {{errMsj? errMsj: 'No se encontrarón datos'}}
+        </div>
 </div>
