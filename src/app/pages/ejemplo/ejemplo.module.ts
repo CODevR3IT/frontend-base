@@ -8,8 +8,7 @@ import { HeaderModule } from 'src/app/components/header/header.module';
 import { PaginadoComponent } from './paginado/paginado.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { IntroduccionComponent } from './introduccion/introduccion.component';
-import { NavComponent } from './nav/nav.component';
-import { AvatarModule } from 'ngx-avatar';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
@@ -21,6 +20,7 @@ import { esLocale } from 'ngx-bootstrap/locale';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { SubmenuComponent } from './submenu/submenu.component';
+import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
 defineLocale('es', esLocale);
 
 @NgModule({
@@ -29,7 +29,6 @@ defineLocale('es', esLocale);
     PaginadoComponent,
     FormularioComponent,
     IntroduccionComponent,
-    NavComponent,
     SubmenuComponent,
   ],
   imports: [
@@ -37,11 +36,11 @@ defineLocale('es', esLocale);
     EjemploRoutingModule,
     HeaderModule,
     FooterModule,
-    AvatarModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
+    SidebarModule,
     TimepickerModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TypeaheadModule.forRoot(),

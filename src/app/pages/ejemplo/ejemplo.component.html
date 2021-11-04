@@ -1,13 +1,12 @@
 <ngx-spinner> <p class="text-white">Espere un momento...</p></ngx-spinner>
-<app-header></app-header>
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white">
-            <app-nav></app-nav>
-        </div>
-        <div class="col">
+<div class="page-wrapper" [ngClass]="{'toggled' : getSideBarState()}">
+    <app-sidebar></app-sidebar>
+    <main class="page-content">
+        <app-header></app-header>
+        <div class="router-content">
             <router-outlet></router-outlet>
         </div>
-    </div>
+        <app-footer></app-footer>
+        <div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : !getSideBarState()}"></div>
+    </main>
 </div>
-<app-footer></app-footer>
