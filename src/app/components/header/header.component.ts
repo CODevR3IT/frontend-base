@@ -15,4 +15,5 @@ export class HeaderComponent implements OnInit {
   toggleSidebar() {
     this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
   }
+  
 }

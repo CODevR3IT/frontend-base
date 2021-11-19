@@ -8,7 +8,25 @@ export class SidebarService {
   
   menus = [
     {
-      title: 'General Ejemplo',
+      title: 'Menu',
+      type: 'header'
+    },
+    {
+      title: 'Introducción',
+      icon: 'fa fa-home',
+      active: false,
+      type: 'simple',
+      route: '/ejemplo/introduccion'
+    },
+    {
+      title: 'Formularios',
+      icon: 'fa fa-wpforms',
+      active: false,
+      type: 'simple',
+      route: '/ejemplo/formulario'
+    },
+    {
+      title: 'Ejemplo Dropdown',
       type: 'header'
     },
     {

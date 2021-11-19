@@ -16,7 +16,7 @@
             <span class="user-role">{{session?.rol_nombre}}</span>
             <span class="user-status">
               <i class="fa fa-circle"></i>
-              <span>Online</span>
+              <span>En línea</span>
             </span>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <ul>
             <li *ngFor="let menu of menus" [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === 'dropdown' , 'header-menu':menu.type === 'header'}">
               <span *ngIf="menu.type === 'header'">{{menu.title}}</span>
-              <a *ngIf="menu.type !== 'header'" [routerLink]="" (click)='toggle(menu)'>
+              <a *ngIf="menu.type !== 'header'" [routerLink]="menu.route" (click)='toggle(menu)'>
                 <i class="{{menu.icon}}"></i>
                 <span>{{menu.title}}</span>
                 <span *ngIf="menu.badge" class="badge rounded-pill" [ngClass]="menu.badge.class">{{menu.badge.text}}</span>
