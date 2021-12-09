@@ -21,6 +21,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
+import { RconModule } from 'src/app/modulos/rcon/rcon.module';
+import { DocumentalModule } from 'src/app/modulos/documental/documental.module';
 defineLocale('es', esLocale);
 
 @NgModule({
@@ -41,6 +43,8 @@ defineLocale('es', esLocale);
     ReactiveFormsModule,
     NgxSpinnerModule,
     SidebarModule,
+    RconModule,
+    DocumentalModule,
     TimepickerModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TypeaheadModule.forRoot(),

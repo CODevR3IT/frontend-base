@@ -27,7 +27,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.session = this.auth.getSession();
-    console.log(this.session);
   }
 
   getSideBarState() {

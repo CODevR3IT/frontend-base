@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./submenu.component.css']
 })
 export class SubmenuComponent implements OnInit {
-
+  persona: any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setPersona(persona:any){
+    this.persona = persona;
   }
 
 }

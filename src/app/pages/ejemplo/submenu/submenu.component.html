@@ -1,1 +1,53 @@
-<p>submenu works!</p>
+<div class="content-box bg-white content-box-cdmx-primary">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-cdmx-primary me-4" data-bs-toggle="modal" data-bs-target="#modalrcon">
+    RCON
+  </button>
+  <button type="button" class="btn btn-cdmx-primary" data-bs-toggle="modal" data-bs-target="#modaldocumental">
+    Documental
+  </button>
+  <pre *ngIf="persona">
+    {{persona | json}}
+  </pre>
+  <ngx-documental></ngx-documental>
+  
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalrcon" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">RCON</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!--Rcon-->
+          <ngx-rcon [showNotario]="true" [showPerito]="true" [showSociedad]="true" (getPersona)="setPersona($event)"></ngx-rcon>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-cdmx-primary" data-bs-dismiss="modal" [disabled]="!persona">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modaldocumental" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Documental</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-cdmx-primary" >Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -26,13 +26,7 @@ const routes: Routes = [
         path:'paginado', component: PaginadoComponent
       },
       {
-        path: 'submenu/item1', component: SubmenuComponent,
-      },
-      {
-        path: 'submenu/item2', component: SubmenuComponent,
-      },
-      {
-        path: 'submenu/item3', component: SubmenuComponent,
+        path: 'modulos', component: SubmenuComponent,
       }
     ]
   },

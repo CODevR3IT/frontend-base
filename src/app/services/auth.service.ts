@@ -11,8 +11,10 @@ export interface AuthData {
   providedIn: 'root'
 })
 export class AuthService {
-
-  sessionName = 'session_' + environment.appName;
+  //Para diferentes sesiones
+  //sessionName = 'session_' + environment.appName;
+  //modo sso
+  sessionName = 'S-d26947c2ea21a7d95355e4e176845c34c0883c70';
 
   constructor(public router: Router) { }
 

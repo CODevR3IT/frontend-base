@@ -26,6 +26,20 @@ export class SidebarService {
       route: '/ejemplo/formulario'
     },
     {
+      title: 'Paginado',
+      icon: 'fa fa-table',
+      active: false,
+      type: 'simple',
+      route: '/ejemplo/paginado'
+    },
+    {
+      title: 'Módulos',
+      icon: 'fa fa-laptop-code',
+      active: false,
+      type: 'simple',
+      route: '/ejemplo/modulos'
+    },
+    {
       title: 'Ejemplo Dropdown',
       type: 'header'
     },

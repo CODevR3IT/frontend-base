@@ -6,7 +6,9 @@ export const environment = {
   production: true,
   appName: 'Base BS',
   version: '1.0.0',
-  baseEndpoint: '',
+  endpoint: '',
+  rconEndpoint: '',
+  documentalEndpoint: '',
   ssoEndpoint: '',
   ssoToken: ''
 };

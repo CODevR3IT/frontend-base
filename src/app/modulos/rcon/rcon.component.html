@@ -1,1 +1,65 @@
-<p>rcon works!</p>
+<ngx-spinner>
+    <p class="text-white">Espere un momento...</p>
+</ngx-spinner>
+<div class="p-2">
+    <div class="mb-3">
+        <label class="form-label">Busqueda por: </label>
+        <select class="form-select" name="busqueda" [(ngModel)]="busqueda">
+            <option value="notario" *ngIf="showNotario">Notario</option>
+            <option value="perito" *ngIf="showPerito">Perito</option>
+            <option value="sociedad" *ngIf="showSociedad">Sociedad</option>
+        </select>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-6">
+            <label class="form-label">{{busqueda == 'notario' ? 'Número Notario' : 'Clave'}}</label>
+            <input type="text" class="form-control" name="clave" [(ngModel)]="clave" placeholder="{{busqueda == 'notario' ? 'Número Notario' : 'Clave'}}">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">RFC</label>
+            <input type="text" class="form-control" name="rfc" [(ngModel)]="rfc" placeholder="RFC">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre">
+        </div>
+    </div>
+    <div class="d-flex p-2 flex-row-reverse mb-5">
+        <button class="btn btn-cdmx-secondary" [disabled]="!busqueda" (click)="buscar()">Buscar <i
+                class="fas fa-search"></i></button>
+        <button class="btn btn-cdmx-primary me-2" (click)="clave = ''; rfc = ''; nombre = ''; busqueda = '' ">Limpiar <i
+                class="fas fa-times"></i></button>
+    </div>
+    <ng-container *ngIf="data.length > 0">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped table-bordered">
+                <thead class="table-cdmx-secondary" style="white-space: nowrap;">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>RFC</th>
+                        <th>{{busqueda == 'notario' ? 'Número Notario' : 'Clave'}}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <td>{{item.nombre}} {{item.apellidopaterno}} {{item.apellidomaterno}}</td>
+                        <td>{{item.rfc}}</td>
+                        <td>{{item?.numnotario}} {{item?.registro}}</td>
+                        <td class="text-center">
+                            <input class="form-check-input" type="radio" name="idpersona"
+                                (change)="seleccionar(item)" [value]="item.idpersona">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <pagination [totalItems]="total" [rotate]="false" [maxSize]="4" [itemsPerPage]="perPage" [boundaryLinks]="true"
+            previousText="&lsaquo;" [(ngModel)]="pagina" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"
+            (pageChanged)="buscar($event)"></pagination>
+    </ng-container>
+</div>

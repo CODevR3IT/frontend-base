@@ -6,8 +6,8 @@
         </div>
   
         <div class="sidebar-profile">
-          <div class="user-pic">
-            <img class="img-responsive img-rounded" src="{{session?.perfil_img}}" alt="User picture">
+          <div class="user-pic" >
+            <img class="img-responsive img-rounded" src="{{session?.perfil_img ? session?.perfil_img : 'assets/img/blank-avatar.svg'}}" alt="User picture">
           </div>
           <div class="user-info">
             <span class="user-name">{{session?.nombre}}
@@ -19,6 +19,7 @@
               <span>En línea</span>
             </span>
           </div>
+          <span style="font-size: x-small;" *ngIf="session?.porExpirar" class="text-danger text-small">{{session?.msjExpirar}}</span>
         </div>
         <!--div class="sidebar-search">
           <div>
@@ -56,7 +57,7 @@
       </perfect-scrollbar>
     </div>
     <div class="sidebar-footer">
-      <div class="dropdown" dropdown>
+      <!--<div class="dropdown" dropdown>
         <a [routerLink]="" dropdownToggle>
           <i class="fa fa-bell"></i>
           <span class="badge rounded-pill bg-warning notification">5</span>
@@ -183,9 +184,10 @@
           <a class="dropdown-item" [routerLink]="">Help</a>
           <a class="dropdown-item" [routerLink]="">Setting</a>
         </div>
-      </div>
+      </div>-->
       <div>
         <a [routerLink]="" (click)="closeSession()">
+          Salir
           <i class="fa fa-power-off"></i>
         </a>
       </div>
