@@ -12,7 +12,6 @@ const routes: Routes = [
     path: 'main',
     canActivate: [GuardService],
     loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule),
-    
   },
   {
     path: 'ejemplo',

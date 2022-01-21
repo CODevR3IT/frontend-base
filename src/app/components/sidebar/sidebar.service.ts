@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -173,7 +174,9 @@ export class SidebarService {
       type: 'simple'
     }
   ];
-  constructor() { }
+  constructor(private auth: AuthService) {
+    
+   }
 
   toggle() {
     this.toggled = ! this.toggled;

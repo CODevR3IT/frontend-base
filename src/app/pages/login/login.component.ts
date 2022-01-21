@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.http.post(environment.ssoEndpoint, payload,this.httpOptions)
     .subscribe((res:any) => {
       this.spinner.hide();
-      this.auth.setSession(res);
+      this.auth.setSession({token:res, userData: res });
       this.route.navigate(['/ejemplo']);
     }, (err: any) =>{
       this.spinner.hide();
