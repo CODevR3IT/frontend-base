@@ -34,7 +34,8 @@ export class AuthService {
   public getToken(): string {
     if (this.isAuthenticated()) {
       let sesskey = localStorage.getItem(this.sessionName);
-      return JSON.parse(sesskey ? sesskey : '');
+      let session = JSON.parse(sesskey ? sesskey : '');
+      return session.token;
     } else {
       return '';
     }
