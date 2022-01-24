@@ -19,11 +19,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ejemplo/ejemplo.module').then(m => m.EjemploModule),
   },
   {
-    path: 'ejemplo',
-    canActivate: [GuardService],
-    loadChildren: () => import('./pages/ejemplo/ejemplo.module').then(m => m.EjemploModule),
-  },
-  {
     path: '**',
     loadChildren: () => import('./pages/error/not-found/not-found.module').then(m => m.NotFoundModule),
     pathMatch: 'full'
