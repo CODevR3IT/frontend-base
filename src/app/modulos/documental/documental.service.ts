@@ -36,7 +36,7 @@ export interface RPPC{
 export interface Ficheros{
     nombre: string,
     descripcion: string,
-    base64: string  
+    base64: any  
 }
 
 @Injectable({
@@ -48,5 +48,9 @@ export class DocumentalService {
 
     getTiposDocumentoJuridico(): Observable<any>{
         return this.http.get(`${this.endpoint}catalogos/tipo-documento-juridico`)
+    }
+
+    guardarDocumentoJuridico(body: DocumentoJuridicoPayload): Observable<any>{
+        return this.http.post(`${this.endpoint}documento/juridico/nuevo`, body);
     }
 }

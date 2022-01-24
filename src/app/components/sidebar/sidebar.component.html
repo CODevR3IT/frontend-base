@@ -7,19 +7,22 @@
   
         <div class="sidebar-profile">
           <div class="user-pic" >
-            <img class="img-responsive img-rounded" src="{{session?.perfil_img ? session?.perfil_img : 'assets/img/blank-avatar.svg'}}" alt="User picture">
+            <img class="img-responsive img-rounded" src="{{session?.userData?.perfil_img ? session?.userData?.perfil_img : 'assets/img/blank-avatar.svg'}}" alt="User picture">
           </div>
           <div class="user-info">
-            <span class="user-name">{{session?.nombre}}
-              <strong>{{session?.primer_apellido}}</strong>
+            <span class="user-name">
+              <strong>{{session?.userData?.login}}</strong>
             </span>
-            <span class="user-role">{{session?.rol_nombre}}</span>
+            <span class="user-role">{{session?.userData?.rol_nombre}}</span>
             <span class="user-status">
               <i class="fa fa-circle"></i>
               <span>En línea</span>
             </span>
           </div>
-          <span style="font-size: x-small;" *ngIf="session?.porExpirar" class="text-danger text-small">{{session?.msjExpirar}}</span>
+          <span class="text-cdmx-primary" style="font-size: small;">
+            {{session?.userData?.nombre}}<strong>{{session?.userData?.primer_apellido}}</strong>
+          </span>
+          <span style="font-size: x-small;" *ngIf="session?.userData?.porExpirar" class="text-danger text-small">{{session?.userData?.msjExpirar}}</span>
         </div>
         <!--div class="sidebar-search">
           <div>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmenuComponent implements OnInit {
   persona: any;
+  documentoDigital: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +15,10 @@ export class SubmenuComponent implements OnInit {
 
   setPersona(persona:any){
     this.persona = persona;
+  }
+
+  setDocumentoDigital(iddocumentodigital:any){
+    this.documentoDigital = iddocumentodigital;
   }
 
 }
