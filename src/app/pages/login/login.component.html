@@ -26,10 +26,10 @@
             <div class="mb-5">
                 <label class="form-label">Clave</label>
                 <div class="input-group">
-                    <input type="password" class="form-control is-invalid" placeholder="********"
+                    <input type="password" class="form-control is-invalid"
                         [(ngModel)]="logIn.password" name="password" #password="ngModel"
                         [class.is-invalid]="password.invalid && (password.dirty || password.touched)" required>
-                    <div class="invalid-feedback">El campo password es requerido</div>
+                    <div class="invalid-feedback">El campo clave es requerido</div>
                 </div>
             </div>
             <div class="d-grid">
