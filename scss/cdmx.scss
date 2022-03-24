@@ -14,22 +14,6 @@ $custom-theme-colors: (
   "cdmx-accent": $cdmx-accent,
 );
 
-.cdmx-header{
-  max-width: 550px;
-  min-height: 60px;
-  padding: 12px 0;
-  margin: 2em auto;
-  margin-bottom: -2px;
-  text-align: center;
-  color: white;
-  font-size: 30px;
-  font-weight: 500;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  box-shadow: 0 1px 1px 1px #f2f2f2;
-  background-color: $cdmx-primary;
-}
-
 $table-variants: map-merge($table-variants, $custom-theme-colors);
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
@@ -158,6 +142,21 @@ td.week span{color:$cdmx-primary !important}
 .router-content{
   flex: 1 0 auto;
 
+}
+.cdmx-header{
+  max-width: 550px;
+  min-height: 60px;
+  padding: 12px 0;
+  margin: 2em auto;
+  margin-bottom: -2px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 1px 1px 1px #f2f2f2;
+  background-color: $cdmx-primary;
 }
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
