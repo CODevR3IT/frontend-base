@@ -12,7 +12,7 @@
           *ngIf="session?.userData?.porExpirar"> {{session?.userData?.msjExpirar}}</span>
       </span>
  
-      <div class="btn-group" style="margin-right: 60px;" dropdown container="body">
+      <div class="btn-group" style="margin-right: 60px; cursor: pointer;" dropdown container="body">
         <img class="img-responsive img-rounded dropdown-toggle" width="50" id="button-animated" dropdownToggle
           src="{{session?.userData?.perfil_img ? session?.userData?.perfil_img : 'assets/img/blank-avatar.svg'}}"
           alt="Imagen del usuario">
@@ -28,11 +28,6 @@
         <i class="fas fa-bars"></i>
       </button>
     </div>
-
-
-
-
-
 
 
 
