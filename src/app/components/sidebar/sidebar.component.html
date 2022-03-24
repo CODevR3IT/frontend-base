@@ -4,7 +4,7 @@
         <div class="sidebar-header">
           <img class="me-2" src="assets/img/cdmx.png" height="28" /><a [routerLink]="">{{appName}}</a>
         </div>
-  
+        <!--
         <div class="sidebar-profile">
           <div class="user-pic" >
             <img class="img-responsive img-rounded" src="{{session?.userData?.perfil_img ? session?.userData?.perfil_img : 'assets/img/blank-avatar.svg'}}" alt="User picture">
@@ -24,6 +24,7 @@
           </span>
           <span style="font-size: x-small;" *ngIf="session?.userData?.porExpirar" class="text-danger text-small">{{session?.userData?.msjExpirar}}</span>
         </div>
+        -->
         <!--div class="sidebar-search">
           <div>
             <div class="input-group">
@@ -188,11 +189,11 @@
           <a class="dropdown-item" [routerLink]="">Setting</a>
         </div>
       </div>-->
-      <div>
+      <!--<div>
         <a [routerLink]="" (click)="closeSession()">
           Salir
           <i class="fa fa-power-off"></i>
         </a>
-      </div>
+      </div>-->
     </div>
   </nav>

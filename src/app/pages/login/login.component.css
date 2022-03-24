@@ -1,0 +1,16 @@
+.card {
+    max-width: 550px;
+    margin: 2em auto;
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
+  .site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .site-content {
+    flex: 1;
+  }

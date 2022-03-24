@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    BsDropdownModule
   ],
   exports:[HeaderComponent]
 })

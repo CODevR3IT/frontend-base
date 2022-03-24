@@ -1,13 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-white bg-white shadow-sm">
   <div class="container-fluid">
- 
+
     <a class="navbar-brand" href="#">
       <img src="assets/img/logo_dependencia.svg" height="70" width="100%" />
     </a>
-
-    <button class="navbar-toggler d-block text-cdmx-primary" type="button" (click)="toggleSidebar()">
-      <i class="fas fa-bars"></i>
+    <div class="d-flex">
+      <span class="d-none d-sm-none d-md-block" *ngIf="session.userData"
+        style="font-size: medium; margin-right: 20px; margin-top: 10px; color:#828282">{{session.userData.nombre}} {{session.userData.primer_apellido}}
+        {{session.userData.segundo_apellido}}
+        <span style="font-size: smaller; color: #dc3545; display: block; margin: 0; padding: 0;"
+          *ngIf="session?.userData?.porExpirar"> {{session?.userData?.msjExpirar}}</span>
+      </span>
+ 
+      <div class="btn-group" style="margin-right: 60px;" dropdown container="body">
+        <img class="img-responsive img-rounded dropdown-toggle" width="50" id="button-animated" dropdownToggle
+          src="{{session?.userData?.perfil_img ? session?.userData?.perfil_img : 'assets/img/blank-avatar.svg'}}"
+          alt="Imagen del usuario">
+          <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-animated">
+        <li role="menuitem"><a class="dropdown-item" href="#" (click)="closeSession()">Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+        </a></li>
+       
+      </ul>
+      </div>
+      
+      <button class="navbar-toggler d-block text-cdmx-primary" type="button" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i>
       </button>
+    </div>
+
+
+
+
+
+
+
+
     <!--button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,17 +47,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li>
@@ -39,5 +57,6 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div-->
+
   </div>
 </nav>
